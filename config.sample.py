@@ -5,3 +5,5 @@ people = {
 }
 
 sender = "Randomizer <script@example.com>"
+
+debug = False

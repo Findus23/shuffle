@@ -1,7 +1,7 @@
 import smtplib
 from email.mime.text import MIMEText
 
-from config import sender
+from config import sender, debug
 
 s = smtplib.SMTP('localhost')
 
@@ -13,5 +13,5 @@ def notify(name: str, email: str, chosen_person: str) -> None:
     msg['Subject'] = f"Result of shuffle for {name}"
     msg['From'] = sender
     msg['To'] = to
-    print(msg.as_string())
+    if debug: print(msg.as_string())
     s.sendmail(sender, [to], msg.as_string())
